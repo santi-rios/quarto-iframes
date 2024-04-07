@@ -30,7 +30,6 @@ R Markdown y Quarto
 :::
 
 [Mariana Guerrero Osornio](mailto:mgueosor@hotmail.com)
-[Contact Us](mailto:admin@w3schools.io)
 
 [Santiago Garcia Rios](mailto:santiago_gr@ciencias.unam.mx)
 
@@ -44,7 +43,7 @@ R Markdown y Quarto
 ## Markdown
 
 ::: {.incremental}
--  Lenguaje de marcado *plano* diseñado para ser eficiente. 
+- Lenguaje de marcado *plano* diseñado para ser eficiente. 
 - Facilmente se puede convertir a distintos formatos (HTML, PDF, Word...).  
 - RMarkdown y Quarto son una extensión de Markdown que permite ejecutar código en R.
 :::
@@ -67,7 +66,7 @@ R Markdown y Quarto
 
 ## ¿Qué es RMarkdownon?
 
-<span style="font-size: 1.5em;">Es una herramienta que permite hacer documentos dinámicos y reproducibles con <span style="color: red;">R.</span> 
+<span style="font-size: 1.5em;">Es una librería que permite hacer documentos dinámicos y reproducibles con <span style="color: red;">R.</span> 
 Combina código, texto, datos y gráficas.</span>
 
 <div style="text-align: right;">
@@ -82,7 +81,7 @@ Combina código, texto, datos y gráficas.</span>
 ## ¿Qué es Quarto ?
 
 <span style="font-size: 1.3em;"><span style="color: red;">Quarto</span> es un sistema que también permite crear documentos interactivos usando texto, código y visualizaciones.
-Toma lo mejor de RMarkdown y Jupyter Notebook, para integrarlo en una herramienta.</span>
+Permite crear documentos ejecutando código con [Knitr](https://yihui.org/knitr/) (igual que RMarkdown) o con [Jupyter Notebooks](https://jupyter.org/) en una sola herramienta.</span>
 <div style="text-align: right;">
   <img src="./figuras/im6.png" style="width: 180px;">
 </div>
@@ -96,10 +95,10 @@ Toma lo mejor de RMarkdown y Jupyter Notebook, para integrarlo en una herramient
 ::: {.incremental}
 -	Crear documentos en diferentes formatos: <span style="color: darkblue;">PDF, Word, HTML</span>
 -	Añadir y ejecutar código <span style="color: darkblue;">(bash, python, R, sql..)</span> 
--	Hacer presentaciones
+-	Hacer presentaciones: PowerPoint, [Revealjs](https://revealjs.com/)
 -	Crear sitios webs
 -	Hacer análisis y reportes estadísticos
--	Crear aplicaciones con <span style="color: darkblue;">shiny</span>
+-	Crear aplicaciones con <span style="color: darkblue;">Shiny</span>
 :::
 
 ## Crear un archivo R Markdown {background-iframe="./codevember-1/dist/index.html" background-interactive="False"}
@@ -141,7 +140,7 @@ Toma lo mejor de RMarkdown y Jupyter Notebook, para integrarlo en una herramient
 
 ```yaml
 title: "Presentación"
-author: "Mariana y santiago"
+author: "Mariana y Santiago"
 date: today # fecha de hoy automática
 format: html # formato que se renderiza
 ```
@@ -150,12 +149,12 @@ format: html # formato que se renderiza
 ::: {.incremental}
 - YAML es un formato para escribir datos de configuración en distintas aplicaciones.
 
-- RMarkdown/Quarto se usa para definir cómo se va a renderizar el documento (HTML, PDF, etc.), escribir metadatos (Autores, título, fecha...)
+- En RMarkdown/Quarto se usa para definir cómo se va a renderizar el documento (HTML, PDF, etc.), escribir metadatos (Autores, título, fecha...)
 
 :::
 
 ::: footer
-Más información sobre [formatos para renderizar](https://quarto.org/docs/output-formats/all-formats.html), [metadatos](https://quarto.org/docs/output-formats/all-formats.html)
+Más información sobre [formatos para renderizar](https://quarto.org/docs/output-formats/all-formats.html) y [metadatos](https://quarto.org/docs/output-formats/all-formats.html)
 :::
 
 ## Edición del texto
@@ -187,7 +186,7 @@ Más información sobre [formatos para renderizar](https://quarto.org/docs/outpu
 ```
 
 ::: footer
-[Sintáxis básica de Markdown](https://quarto.org/docs/authoring/markdown-basics.html#lists)
+[Sintáxis básica de Markdown](https://quarto.org/docs/authoring/markdown-basics.html#lists) y [guía completa de Markdown](https://www.markdownguide.org/).
 :::
 
 ## Edición del texto
@@ -218,6 +217,11 @@ Más información sobre [formatos para renderizar](https://quarto.org/docs/outpu
 | </span>                                 |                                         |
 | ```                                     |                                         |
 +-----------------------------------------+-----------------------------------------+
+
+::: footer
+[Sintáxis básica de Markdown](https://quarto.org/docs/authoring/markdown-basics.html#lists) y [guía completa de Markdown](https://www.markdownguide.org/).
+:::
+
 ## Generar listas
 
 - <span style="font-size: 22.0pt;">Se pueden combinar números, signos, letras y espacios</span>
@@ -248,6 +252,10 @@ Más información sobre [formatos para renderizar](https://quarto.org/docs/outpu
           A.  sub-sublista 
           
 ::: 
+
+::: footer
+[Sintáxis básica de Markdown](https://quarto.org/docs/authoring/markdown-basics.html#lists) y [guía completa de Markdown](https://www.markdownguide.org/).
+:::
 
 ## Generar tablas
 
@@ -290,6 +298,10 @@ Más información sobre [formatos para renderizar](https://quarto.org/docs/outpu
 | ```                         |                                       |
 +-----------------------------+---------------------------------------+
 
+::: footer
+[Sintáxis básica de Markdown](https://quarto.org/docs/authoring/markdown-basics.html#lists) y [guía completa de Markdown](https://www.markdownguide.org/).
+:::
+
 ## Bloques de código {#sec-bloques}
 
 <span style="font-size: 23.0pt;">Son bloques de código que se pueden ejecutar. Se utilizan diferentes argumentos para configurar el comportamiento:
@@ -305,20 +317,28 @@ Más información sobre [formatos para renderizar](https://quarto.org/docs/outpu
 </span>
 :::
 
+::: footer
+[Más sobre los bloques de código](https://quarto.org/docs/output-formats/html-code.html).
+:::
 
 ## Diferencias - Quarto vs RMarkdown
 
 ::: {.incremental}
-- rmarkdown necesita el paquete `install.packages("rmarkdown")`, mientras que Quarto viene con RStudio
+- rmarkdown necesita depende de la librería `rmarkdown`, mientras que Quarto no.
 - Quarto es *multilingüe*: <span style="color: darkblue;">R, Python, Javascript y Julia</span>
 -	Quarto es compatible con <span style="color: darkblue;">Knitr, Jupyter y Observable</span>
 - Quarto crea archivos tipo <span style="color: darkblue;">HTML, PDF, MS Word, ePub, etc.</span> sin librerías externas. 
 - Algunos paquetes solo se encuentran en rmarkdown, como los Tutoriales interactivos con [learnr](https://pkgs.rstudio.com/learnr/); ([Ver lista completa de paquetes y equivalencias entre los 2](https://quarto.org/docs/faq/rmarkdown.html#i-use-x-bookdown-blogdown-etc..-what-is-the-quarto-equivalent))
-- Al final son muy similares. 
+- Al final son muy similares y logran los mismos resultados. 
 :::
 
+::: {.notes}
+Knitr es un motor de elaboración de informes en R que permite integrar código de R en documentos de LaTeX, HTML, Markdown, entre otros. Se utiliza principalmente para generar informes y análisis estadísticos que requieren la ejecución de código R.
 
+Jupyter se utiliza ampliamente en la ciencia de datos, el análisis numérico, la computación científica y la educación. Estos documentos, conocidos como notebooks de Jupyter, admiten más de 40 lenguajes de programación, incluidos Python, R, Julia y Scala.
 
+Observable es una plataforma y un lenguaje de programación interactiva basada en la web para la visualización de datos y el análisis colaborativo. Basado en tecnologías web estándar y JavaScript, Observable facilita la creación de visualizaciones de datos complejas y dinámicas.
+:::
 
 ## Diferencias - Formatos 
 :::: {.columns}
@@ -330,9 +350,9 @@ R Markdown (*output*)
 title: "Documento html"
 output:
   html_document:
-    toc: true
+    toc: true # tabla de contenidos
     number_sections: true
-    css: styles.css
+    css: styles.css # estilo gráfico para el documento
 ```
 :::
 :::{.column width="50%"}
@@ -429,7 +449,6 @@ Agregar argumentos a los Bloques de código (ver @sec-bloques)
 - `fig.cap`: Pie de figura. Por ejemplo “Gráfica muy padre”
 - `fig.height` y `fig.width`
 
-
 :::
 
 ::: footer
@@ -439,7 +458,7 @@ Más información: [Tabsets](https://quarto.org/docs/presentations/revealjs/#tab
 
 
 
-## Integrar ressultados del código en el reporte
+## Integrar resultados de código en el reporte
 
 ```{r}
 #| label: setup
@@ -461,6 +480,7 @@ filas_distintas <- nrow(penguins) - nrow(penguin_filter)
 Tenemos datos de 'r nrow(penguins)' pinguinos. Solo
 'r filas_distintas' están catalogados como 'r params$species'. 
 ```
+Cuando renderizemos el documento, obtenemos el siguiente resultado: 
 
 ::: {.incremental}
 - Tenemos datos de `r nrow(penguins)` pinguinos. Solo
@@ -472,7 +492,7 @@ Tenemos datos de 'r nrow(penguins)' pinguinos. Solo
 ![](./figuras/output-word.png)
 
 
-## Gráficos Interactivos 
+## Usar widgets para visualización interactiva 
 
 
 ```{r}
@@ -487,7 +507,6 @@ leaflet() %>%
 ::: footer
 Más información: [widgets](https://quarto.org/docs/interactive/widgets/jupyter.html) y [htmlwidgets](https://quarto.org/docs/interactive/widgets/htmlwidgets.html)
 :::
-
 
 
 ## Plotly
@@ -529,6 +548,8 @@ Información topográfica del volcán Maunga Whau
 ## Animaciones
 
 ```{r}
+#| echo: true
+
 data(gapminder, package = "gapminder")
 
 base <- gapminder %>%
@@ -537,8 +558,8 @@ base <- gapminder %>%
   layout(xaxis = list(type = "log"))
 
 base %>%
-  add_markers(color = ~continent, frame = ~year, ids = ~country) %>%
-  animation_opts(1000, easing = "elastic", redraw = FALSE) %>%
+  add_markers(color = ~continent, frame = ~year, ids = ~country) %>% # crear un frame por cada año para la animación
+  animation_opts(1000, easing = "elastic", redraw = FALSE) %>% # 1000 milisegundos
   animation_button(
     x = 1, xanchor = "right", y = 0, yanchor = "bottom"
   ) %>%
@@ -567,8 +588,15 @@ datatable(iris) # creamos widget dinámico de nuestros datos
 [Librería DT](https://rstudio.github.io/DT/)
 :::
 
-## Aplicaciones con Shiny
-La librería `Shiny` permite crear aplicaciones con R. Quarto puede *correr* estas aplicaciones en sus documentos o *incrustar* las aplicaciones por medio de *iFrames* ("cargar una página dentro de otra página"). 
+## Aplicaciones con librería "Shiny"
+
+2 opciones:
+::: {.incremental}
+- Programar y correr estas aplicaciones en sus documentos. Implica programar la interfaz de Usuario (botones, texto, HTML...) y programar el servidor (código en R).
+
+- *Incrustar* las aplicaciones por medio de *iFrames* ("cargar una página dentro de otra página"). No necesitamos programar nada. 
+:::
+
 
 ```{=html}
  <iframe id="example1" src="https://gallery.shinyapps.io/dist_calc/" style="border: none; width: 100%; height: 720px" frameborder="0"></iframe>
@@ -669,6 +697,8 @@ Formatos para revistas de Elsevier, PLOS, Nature...
 :::
 
 
+# Más ejemplos y usos {background-iframe="./multiple-images/index.html"}
+
 ## Artículos y reportes
 
 ```{=html}
@@ -721,8 +751,10 @@ Formatos para revistas de Elsevier, PLOS, Nature...
 - Insertar con `Insert > Citation`.
 - Insertar con `DOI`, referencia de librería de `Zotero`, `Pubmed ID` u obtener referencias de un archivo `.bib` en el mismo directorio de nuestro documento. 
 - Se crea un archivo de tipo `.bib` donde se añaden las referencias. 
-- Al renderizar el ducmento, se ponen las referencias al final del documento. 
+- Al renderizar el documento, se ponen las referencias al final del documento. 
 :::
+
+##
 
 ![](./figuras/citas.png)
 
@@ -730,7 +762,7 @@ Formatos para revistas de Elsevier, PLOS, Nature...
 [Más sobre citas](https://qmd4sci.njtierney.com/citations-and-styles)
 :::
 
-## Latex
+## Fórmulas
 
 
 :::: {.columns}
@@ -766,7 +798,7 @@ lmer_latex <- equatiomatic::extract_eq(lmer_diamantes)
 :::
 :::{.column width="50%"}
 
-Output
+Output que se renderiza en el documento
 
 
 ```{r}
