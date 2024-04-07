@@ -1,7 +1,7 @@
 ---
 format:
   revealjs:
-    embed-resources: true
+    # embed-resources: true
     transition: slide # fade/slide/convex/concave/zoom/none
     preview-links: true # navegar links dentro de la misma presentación (iframe)
     progress: true # mostrar barra de progreso
@@ -9,7 +9,7 @@ format:
     # incremental: true # listas aparecen de uno en uno
     theme: simple # beige/blood/dark/league/moon/night/serif/simple/sky/solarized
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
-    footer: "[Ver código de la presentación](https://github.com/santi-rios/quarto-iframes/)"
+    footer: "[Ver código de la presentación](https://github.com/santi-rios/quarto-iframes/blob/main/index.qmd)"
     # width: 1280
     # height: 720
     # chalkboard: 
@@ -30,6 +30,7 @@ R Markdown y Quarto
 :::
 
 [Mariana Guerrero Osornio](mailto:mgueosor@hotmail.com)
+[Contact Us](mailto:admin@w3schools.io)
 
 [Santiago Garcia Rios](mailto:santiago_gr@ciencias.unam.mx)
 
@@ -40,6 +41,30 @@ R Markdown y Quarto
 
 # Introducción {background-iframe="./logo-fall/index.html" background-interactive="False"}
 
+## Markdown
+
+::: {.incremental}
+-  Lenguaje de marcado *plano* diseñado para ser eficiente. 
+- Facilmente se puede convertir a distintos formatos (HTML, PDF, Word...).  
+- RMarkdown y Quarto son una extensión de Markdown que permite ejecutar código en R.
+:::
+
+::: footer
+[*The Markdown guide*](https://www.markdownguide.org/)
+:::
+
+## Comparación de texto en markdown vs Word
+
+::: {layout-nrow=2}
+![Word](figuras/word.jpg)
+
+![Word en Editor de Texto](figuras/word_editor.jpg)
+
+![Markdown](figuras/markdown.jpg)
+
+![Markdown en Editor de Texto](figuras/markdown_editor.jpg)
+:::
+
 ## ¿Qué es RMarkdownon?
 
 <span style="font-size: 1.5em;">Es una herramienta que permite hacer documentos dinámicos y reproducibles con <span style="color: red;">R.</span> 
@@ -48,6 +73,23 @@ Combina código, texto, datos y gráficas.</span>
 <div style="text-align: right;">
   <img src="./figuras/logo1.png" style="width: 200px;">
 </div>
+
+
+::: footer
+[Sitio de R Markdown](https://rmarkdown.rstudio.com/)
+:::
+
+## ¿Qué es Quarto ?
+
+<span style="font-size: 1.3em;"><span style="color: red;">Quarto</span> es un sistema que también permite crear documentos interactivos usando texto, código y visualizaciones.
+Toma lo mejor de RMarkdown y Jupyter Notebook, para integrarlo en una herramienta.</span>
+<div style="text-align: right;">
+  <img src="./figuras/im6.png" style="width: 180px;">
+</div>
+
+::: footer
+[Página oficial de Quarto](https://quarto.org/)
+:::
 
 
 ## Se pueden realizar diferentes tareas: 
@@ -95,6 +137,27 @@ Combina código, texto, datos y gráficas.</span>
    <i class="fas fa-arrow-right"></i> Texto
 </div>
 
+## Encabezado - YAML
+
+```yaml
+title: "Presentación"
+author: "Mariana y santiago"
+date: today # fecha de hoy automática
+format: html # formato que se renderiza
+```
+
+
+::: {.incremental}
+- YAML es un formato para escribir datos de configuración en distintas aplicaciones.
+
+- RMarkdown/Quarto se usa para definir cómo se va a renderizar el documento (HTML, PDF, etc.), escribir metadatos (Autores, título, fecha...)
+
+:::
+
+::: footer
+Más información sobre [formatos para renderizar](https://quarto.org/docs/output-formats/all-formats.html), [metadatos](https://quarto.org/docs/output-formats/all-formats.html)
+:::
+
 ## Edición del texto
 - <span style="font-size: 26.0pt;">Agregar encabezados: </span>
 
@@ -123,6 +186,9 @@ Combina código, texto, datos y gráficas.</span>
 </style>
 ```
 
+::: footer
+[Sintáxis básica de Markdown](https://quarto.org/docs/authoring/markdown-basics.html#lists)
+:::
 
 ## Edición del texto
 
@@ -239,13 +305,6 @@ Combina código, texto, datos y gráficas.</span>
 </span>
 :::
 
-## ¿Qué es Quarto ?
-
-<span style="font-size: 1.3em;"><span style="color: red;">Quarto</span> es un sistema que también permite crear documentos interactivos usando texto, código y visualizaciones.
-Toma lo mejor de RMarkdown y Jupyter Notebook, para integrarlo en una herramienta.</span>
-<div style="text-align: right;">
-  <img src="./figuras/im6.png" style="width: 180px;">
-</div>
 
 ## Diferencias - Quarto vs RMarkdown
 
@@ -254,8 +313,8 @@ Toma lo mejor de RMarkdown y Jupyter Notebook, para integrarlo en una herramient
 - Quarto es *multilingüe*: <span style="color: darkblue;">R, Python, Javascript y Julia</span>
 -	Quarto es compatible con <span style="color: darkblue;">Knitr, Jupyter y Observable</span>
 - Quarto crea archivos tipo <span style="color: darkblue;">HTML, PDF, MS Word, ePub, etc.</span> sin librerías externas. 
-- Quarto incorpora más formatos de forma nativa ([websites](https://quarto.org/docs/websites/), [libros](https://quarto.org/docs/books/), [blogs](https://quarto.org/docs/websites/website-blog.html)) mientras que rmarkdown necesita paquetes externos
-- Algunos paquetes todavía solo se encuentran en rmarkdown como los Tutoriales interactivos con [learnr](https://pkgs.rstudio.com/learnr/); [Ver lista completa de paquetes y equivalencias entre los 2](https://quarto.org/docs/faq/rmarkdown.html#i-use-x-bookdown-blogdown-etc..-what-is-the-quarto-equivalent)
+- Algunos paquetes solo se encuentran en rmarkdown, como los Tutoriales interactivos con [learnr](https://pkgs.rstudio.com/learnr/); ([Ver lista completa de paquetes y equivalencias entre los 2](https://quarto.org/docs/faq/rmarkdown.html#i-use-x-bookdown-blogdown-etc..-what-is-the-quarto-equivalent))
+- Al final son muy similares. 
 :::
 
 
@@ -292,7 +351,7 @@ format:
 ::::
 
 ## Diferencias - Opciones de los Bloques de código 
-<span style="font-size: 23.0pt;"> - en Rmarkdown se escriben las opciones en el la primera línea. En quarto se pueden escribir como comentarios: </span>
+<span style="font-size: 23.0pt;"> En Rmarkdown se escriben las opciones en el la primera línea. En quarto se pueden escribir como comentarios: </span>
 
 ::: {.panel-tabset}
 
@@ -310,15 +369,13 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 ```{r}
 #| echo: fenced
-#| output: false
-#| code-overflow: wrap
-#| code-line-numbers: "2|3|4|5"
-#| fig-cap: "Air Quality"
+#| output: false # no incluir código en renderizado
+#| code-overflow: scroll # barra de desplazamiento para código largo
+#| code-line-numbers: "2|3|4|5" # enfatizar código en presentación
+#| fig-cap: "Air Quality" # Nombre de Figura
 
 library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess", se = FALSE)
+ggplot(airquality, aes(Temp, Ozone)) + geom_point() + geom_smooth(method = "loess", se = FALSE)
 ```
 :::
 
@@ -364,7 +421,7 @@ Se pueden pasar dataframes a funciones como `kable` o `flextable` para producir 
 knitr::kable(mtcars, caption = "Un título")
 ```
 
-### Modificar figurtas
+### Modificar output
 
 Agregar argumentos a los Bloques de código (ver @sec-bloques)
 
@@ -415,11 +472,11 @@ Tenemos datos de 'r nrow(penguins)' pinguinos. Solo
 ![](./figuras/output-word.png)
 
 
-## Gráficos Interactivos {background-iframe="./rotating-earth/index.html" background-interactive="False"}
+## Gráficos Interactivos 
 
 
 ```{r}
-#| echo: false
+#| echo: true
 #| fig-height: 5
 library(leaflet)
 leaflet() %>%
