@@ -12,8 +12,8 @@ format:
     footer: "[Ver código de la presentación](https://github.com/santi-rios/quarto-iframes/blob/main/index.qmd)"
     # width: 1280
     # height: 720
-    # chalkboard: 
-      # buttons: true
+    chalkboard:
+      buttons: true
 preload-iframes: true
 # editor: source # visual/source - qué editor usar
 bibliography: references.bib # dónde se guardan las referencias
