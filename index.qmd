@@ -17,6 +17,8 @@ format:
 preload-iframes: true
 # editor: source # visual/source - qué editor usar
 bibliography: references.bib # dónde se guardan las referencias
+revealjs-plugins:
+  - pointer # requiere instalación. activar con q
 params:
   species: Adelie # solo para ejemplo de diapo 
 ---
@@ -29,9 +31,9 @@ R Markdown y Quarto
 
 :::
 
-[Mariana Guerrero Osornio](mailto:mgueosor@hotmail.com)
+Mariana Guerrero Osornio
 
-[Santiago Garcia Rios](mailto:santiago_gr@ciencias.unam.mx)
+Santiago Garcia Rios
 
 :::
 
@@ -40,12 +42,14 @@ R Markdown y Quarto
 
 # Introducción {background-iframe="./logo-fall/index.html" background-interactive="False"}
 
-## Markdown
+## Markdown {background-iframe="./colored-particles/index.html" background-interactive="False"}
 
+::: {style="background-color: #ffffffbb; border-radius: 10px; padding: 5px;"}
 ::: {.incremental}
 - Lenguaje de marcado *plano* diseñado para ser eficiente. 
 - Facilmente se puede convertir a distintos formatos (HTML, PDF, Word...).  
 - RMarkdown y Quarto son una extensión de Markdown que permite ejecutar código en R.
+:::
 :::
 
 ::: footer
@@ -64,7 +68,7 @@ R Markdown y Quarto
 ![Markdown en Editor de Texto](figuras/markdown_editor.jpg)
 :::
 
-## ¿Qué es RMarkdownon?
+## ¿Qué es RMarkdown?
 
 <span style="font-size: 1.5em;">Es una librería que permite hacer documentos dinámicos y reproducibles con <span style="color: red;">R.</span> 
 Combina código, texto, datos y gráficas.</span>
@@ -298,9 +302,22 @@ Más información sobre [formatos para renderizar](https://quarto.org/docs/outpu
 | ```                         |                                       |
 +-----------------------------+---------------------------------------+
 
-::: footer
+::: {.footer}
 [Sintáxis básica de Markdown](https://quarto.org/docs/authoring/markdown-basics.html#lists) y [guía completa de Markdown](https://www.markdownguide.org/).
 :::
+
+## Editor visual
+
+Más similar a editar con programas tipo *Word*, pero sigue siendo Markdown. 
+
+![](./figuras/visual-editing-attributes.png)
+
+![](./figuras/vscode-visual-editor.png)
+
+::: footer
+[Más sobre el Editor Visual](https://quarto.org/docs/visual-editor/).
+:::
+
 
 ## Bloques de código {#sec-bloques}
 
@@ -340,7 +357,7 @@ Jupyter se utiliza ampliamente en la ciencia de datos, el análisis numérico, l
 Observable es una plataforma y un lenguaje de programación interactiva basada en la web para la visualización de datos y el análisis colaborativo. Basado en tecnologías web estándar y JavaScript, Observable facilita la creación de visualizaciones de datos complejas y dinámicas.
 :::
 
-## Diferencias - Formatos 
+## Diferencias - Formatos
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -545,6 +562,49 @@ plot_ly() %>%
 Información topográfica del volcán Maunga Whau
 :::
 
+## Superficie de respuesta
+Modelar relación entre variable de respuesta y una o más variables independientes. 
+
+`Volumen_arbol = B0 + Grosor + Altura + E`
+
+```{r}
+#| code-fold: true
+#| code-summary: "Mostrar código"
+
+library(datasets) # Para librería 'trees' 
+data(trees)
+
+# Modelo lineal
+lm_trees <- lm(Volume ~ Girth + Height, data = trees)
+
+# Crear vectores para Girth and Height
+Girth <- seq(9, 21, by = 0.5)
+Height <- seq(60, 90, by = 0.5)
+
+# prediction grid
+pred_grid <- expand.grid(Girth = Girth, Height = Height)
+
+# Add predicted Volume to the grid
+pred_grid$Volume2 <- predict(lm_trees, newdata = pred_grid)
+
+# Create an interactive 3D scatter plot using plotly
+p <- plot_ly(data = pred_grid, x = ~Girth, y = ~Height, z = ~Volume2, type = 'scatter3d', mode = 'markers', 
+             marker = list(color = 'dodgerblue', size = 2)) |> 
+  add_trace(data = trees, x = ~Girth, y = ~Height, z = ~Volume, type = 'scatter3d', mode = 'markers', 
+            marker = list(color = 'red', size = 3))
+
+# Customize the layout
+p <- p %>% layout(scene = list(xaxis = list(title = 'Girth (in)'),
+                               yaxis = list(title = 'Height (ft)'),
+                               zaxis = list(title = 'Volume (ft^3)')),
+                  annotations = list(x = 0.5, y = 0.5, text = "", showarrow = FALSE))
+
+# Print the plot
+p
+
+```
+
+
 ## Animaciones
 
 ```{r}
@@ -711,7 +771,7 @@ Formatos para revistas de Elsevier, PLOS, Nature...
 
 
 ::: footer
-[Más ejemplos](https://quarto.org/docs/gallery/#articles-reports)
+Más ejemplos en [Quarto](https://quarto.org/docs/gallery/#articles-reports) y [RMarkdown](https://rmarkdown.rstudio.com/gallery.html)
 :::
 
 ## Presentaciones
@@ -722,7 +782,7 @@ Formatos para revistas de Elsevier, PLOS, Nature...
 
 
 ::: footer
-[Más ejemplos](https://quarto.org/docs/gallery/#presentations)
+Más ejemplos en [Quarto](https://quarto.org/docs/gallery/#presentations) y [RMarkdown](https://rmarkdown.rstudio.com/gallery.html)
 :::
 
 ## Páginas web
@@ -733,7 +793,7 @@ Formatos para revistas de Elsevier, PLOS, Nature...
 
 
 ::: footer
-[Más ejemplos](https://quarto.org/docs/gallery/#websites)
+Más ejemplos en [Quarto](https://quarto.org/docs/gallery/#websites) y [RMarkdown](https://rmarkdown.rstudio.com/gallery.html)
 :::
 
 ## libros
@@ -744,7 +804,7 @@ Formatos para revistas de Elsevier, PLOS, Nature...
 
 
 ::: footer
-[Más ejemplos](https://quarto.org/docs/gallery/#books)
+Más ejemplos en [Quarto](https://quarto.org/docs/gallery/#books) y [RMarkdown](https://rmarkdown.rstudio.com/gallery.html)
 :::
 
 # Otros {background-iframe="./multiple-images/index.html"}
@@ -768,10 +828,6 @@ Formatos para revistas de Elsevier, PLOS, Nature...
 
 ## Fórmulas
 
-
-:::: {.columns}
-
-::: {.column width="50%"}
 Modelos lineales
 
 ```{r}
@@ -799,8 +855,8 @@ lmer_diamantes <- lmer(quilate ~ corte + (1 | precio), data = datos_diamantes)
 lm_latex <- equatiomatic::extract_eq(lm_diamantes)
 lmer_latex <- equatiomatic::extract_eq(lmer_diamantes)
 ```
-:::
-:::{.column width="50%"}
+
+. . .
 
 Output que se renderiza en el documento
 
@@ -811,9 +867,6 @@ lm_latex
 lmer_latex
 
 ```
-:::
-
-::::
 
 
 ::: {.notes}
@@ -839,7 +892,7 @@ Por último describe la distribución de los interceptos aleatorios aj para cada
 ```
 
 
-## Para concluir... 
+## Para concluir... {background-iframe="./moving-waves/index.html" background-interactive="False"}
 
 - Quarto y RMarkdown crean documentos dinámicos, combinando texto, código y gráficos
 
@@ -848,3 +901,22 @@ Por último describe la distribución de los interceptos aleatorios aj para cada
 <span style="color:blue">RMarkdown</span> - integrado a R, ideal para informes y documentos científicos.
 
 <span style="color:blue">Quarto</span> - plataforma con varios lenguajes de programación, permite una mayor flexibilidad.
+
+
+## Recursos Extras 
+
+**Recursos**
+
+- [awesome-quarto](https://github.com/mcanouil/awesome-quarto): pláticas, herramientas, ejemploes y artículos para quarto. 
+- [Extensiones para Quarto](https://github.com/quarto-ext)
+- [awsome-markdown](https://github.com/mundimark/awesome-markdown): librerías, servicios, editores, herramientas, cheatsheets para Markdown. 
+
+**Temas y Estilos**
+
+
+- [Quarto themes](https://quarto.org/docs/presentations/revealjs/themes.html)
+- [iFrames themes](https://emilhvitfeldt.github.io/quarto-iframe-examples/#/section)
+- [Earth Theme](https://github.com/EmilHvitfeldt/quarto-revealjs-earth)
+- [Clean Theme](https://github.com/grantmcdermott/quarto-revealjs-clean)
+- [NES Theme](https://github.com/EmilHvitfeldt/quarto-nes-theme)
+- [Rladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme)
