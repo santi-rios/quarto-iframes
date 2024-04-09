@@ -1,10 +1,9 @@
 
-# Quarto iFrame Examples
+# Quarto y RMarkdown [presentación](https://santi-rios.github.io/quarto-iframes/#/section)
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of this repository is to act as a gallery of iframes that could be used in [Quarto Presentations](https://quarto.org/docs/presentations/revealjs/)
+Ver archivo `index.qmd` para ver el código de la presentación.
 
-# [Slides](https://emilhvitfeldt.github.io/quarto-iframe-examples/)
-
+Para hacer una presentación con página web, copiar este repositorio y luego ir a opciones del repositorio > pages > source: deploy from brand & Branch:main

@@ -590,16 +590,20 @@ datatable(iris) # creamos widget dinámico de nuestros datos
 
 ## Aplicaciones con librería "Shiny"
 
-2 opciones:
 ::: {.incremental}
-- Programar y correr estas aplicaciones en sus documentos. Implica programar la interfaz de Usuario (botones, texto, HTML...) y programar el servidor (código en R).
 
-- *Incrustar* las aplicaciones por medio de *iFrames* ("cargar una página dentro de otra página"). No necesitamos programar nada. 
+- Programar y correr estas aplicaciones. 
+
+- Implica programar la interfaz de Usuario (botones, texto, HTML...) y programar el servidor (código en R).
+
+- *Incrustar* las aplicaciones por medio de *iFrames* ("cargar una página dentro de otra página"). 
+- No necesitamos programar nada. 
+
 :::
 
 
 ```{=html}
- <iframe id="example1" src="https://gallery.shinyapps.io/dist_calc/" style="border: none; width: 100%; height: 720px" frameborder="0"></iframe>
+ <iframe id="example1" src="https://gallery.shinyapps.io/anova_shiny_rstudio/" style="border: none; width: 100%; height: 720px" frameborder="0"></iframe>
 ```
 
 
@@ -608,7 +612,7 @@ datatable(iris) # creamos widget dinámico de nuestros datos
 
 [Galería de Shiny apps](https://shiny.posit.co/r/gallery/).
 
-[Mastering Shiny](https://mastering-shiny.org/).
+[Aplicaciones de Shiny para estadística](https://github.com/huyingjie/Awesome-shiny-apps-for-statistics).
 :::
 
 
@@ -812,7 +816,23 @@ lmer_latex
 ::::
 
 
+::: {.notes}
+relación entre el quilate de un diamante y su corte, teniendo en cuenta variaciones asociadas con el precio de los diamantes. 
+
+Ecuación lineal explicación: 
+Quilate sigue una distribución normal con una media (poblacional) que se modela como una función de las variables descritas a continuación. La varianza es de los residuos (variabilidad en quilates que no se explica por el modelo). 
+El modelo para mu es el siguiente. 
+aij es el efecto aleatorio del intercepto para cada nivel del precio j, lo que significa que hay un efecto base diferente para cada precio de diamante. 
+Las betas representan los efectos fijos del corte de los diamantes.
+Por último describe la distribución de los interceptos aleatorios aj para cada precio j. Cada intercepto sigue una distribución normal con media yu varianza, modelando la variabilidad de los quilates de los diamantes entre diferentes precios. 
+
+:::
+
 ## iframes
+
+```
+<iframe width="780" height="500" src="https://julietarosell1.wixsite.com/website-4" title="iframe example"></iframe>
+```
 
 ```{=html}
 <iframe width="780" height="500" src="https://julietarosell1.wixsite.com/website-4" title="iframe example"></iframe>
