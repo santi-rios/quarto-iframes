@@ -839,3 +839,12 @@ Por último describe la distribución de los interceptos aleatorios aj para cada
 ```
 
 
+## Para concluir... 
+
+- Quarto y RMarkdown crean documentos dinámicos, combinando texto, código y gráficos
+
+- Tienen similitudes en su funcionalidad pero diferencias en sintaxis y enfoque
+
+<span style="color:blue">RMarkdown</span> - integrado a R, ideal para informes y documentos científicos.
+
+<span style="color:blue">Quarto</span> - plataforma con varios lenguajes de programación, permite una mayor flexibilidad.
