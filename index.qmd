@@ -903,20 +903,3 @@ Por último describe la distribución de los interceptos aleatorios aj para cada
 <span style="color:blue">Quarto</span> - plataforma con varios lenguajes de programación, permite una mayor flexibilidad.
 
 
-## Recursos Extras 
-
-**Recursos**
-
-- [awesome-quarto](https://github.com/mcanouil/awesome-quarto): pláticas, herramientas, ejemploes y artículos para quarto. 
-- [Extensiones para Quarto](https://github.com/quarto-ext)
-- [awsome-markdown](https://github.com/mundimark/awesome-markdown): librerías, servicios, editores, herramientas, cheatsheets para Markdown. 
-
-**Temas y Estilos**
-
-
-- [Quarto themes](https://quarto.org/docs/presentations/revealjs/themes.html)
-- [iFrames themes](https://emilhvitfeldt.github.io/quarto-iframe-examples/#/section)
-- [Earth Theme](https://github.com/EmilHvitfeldt/quarto-revealjs-earth)
-- [Clean Theme](https://github.com/grantmcdermott/quarto-revealjs-clean)
-- [NES Theme](https://github.com/EmilHvitfeldt/quarto-nes-theme)
-- [Rladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme)
