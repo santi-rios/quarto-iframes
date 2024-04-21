@@ -673,6 +673,10 @@ datatable(iris) # creamos widget dinámico de nuestros datos
 [Galería de Shiny apps](https://shiny.posit.co/r/gallery/).
 
 [Aplicaciones de Shiny para estadística](https://github.com/huyingjie/Awesome-shiny-apps-for-statistics).
+
+[Aplicaciones de shiny II](https://www.marinedatascience.co/blog/2019/01/16/helpful-shiny-apps/)
+
+[Correr aplicación de Shiny es tu propio servidor](https://www.marinedatascience.co/blog/2019/04/28/run-shiny-server-on-your-own-digitalocean-droplet-part-1/)
 :::
 
 
